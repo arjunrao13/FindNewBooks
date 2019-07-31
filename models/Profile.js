@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 //Create schema
 const ProfileSchema = new Schema({
-
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    
     favAuthors : [
         {
             author : {
@@ -13,6 +17,15 @@ const ProfileSchema = new Schema({
         }
     ],
     favBooks : [
+        {
+            book: {
+                type: Schema.Types.ObjectId,
+                ref: 'books'
+            }
+        }
+    ],
+
+    readLater : [
         {
             book: {
                 type: Schema.Types.ObjectId,

@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+
 const passport = require('passport');
 
 const bodyParser = require('body-parser')
@@ -25,6 +28,10 @@ app.use(bodyParser.json());
 
 //Let's write our first route
 app.get('/', (req, res) => res.send('Hello world'));
+
+app.use('/api/users', users);
+app.use('/api/profile', profile);
+
 
 const port = 5002
 app.listen(port, () => console.log(`Server is running on port ${port}`));

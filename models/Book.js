@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 //Create schema
 const BookSchema = new Schema({
-
+    volID : {
+        type: String,
+        required: true
+    },
     title : {
         type: String,
         required: true
@@ -12,10 +15,7 @@ const BookSchema = new Schema({
         type: String,
         required: true
     },
-    cover : {
-        type: String,
-        required: true
-    },
+    
     publishDate : {
         type: String,
 
